@@ -1,0 +1,718 @@
+
+/* Reset básico de márgenes */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url('img/fondo2.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: #ffffff;
+    font-family: 'Montserrat', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.contenedor {
+    max-width: 1200px;
+    width: 100%;
+    text-align: center;
+}
+
+/* =========================================
+   ESTILOS DEL ENCABEZADO
+   ========================================= */
+
+.encabezado {
+    position: relative;
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* =========================================
+   MARVEL VS DC
+   ========================================= */
+
+.marcas-superpuestas {
+    position: absolute;
+    top: -20px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* Acerca MARVEL y DC */
+    gap: 400px;
+
+    padding: 0;
+    pointer-events: none;
+    z-index: 2;
+}
+
+/* =========================================
+   FUENTE GÓTICA
+   ========================================= */
+
+@font-face {
+    font-family: 'Amsterdam Four';
+    src: url('./fonts/AmsterdamFour.woff2') format('woff2'),
+         url('./fonts/AmsterdamFour.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* =========================================
+   MARVEL
+   ========================================= */
+
+.marvel-text {
+    font-family: 'Amsterdam Four', 'Cinzel', serif;
+    font-size: 80px;
+    color: #e62429;
+    font-weight: normal;
+
+    /* Inclinación hacia el centro */
+    transform: rotate(-10deg);
+
+    letter-spacing: 2px;
+
+    text-shadow:
+        3px 3px 0 #000000,
+        5px 5px 0 #000000,
+        0 0 12px rgba(230, 36, 41, 0.5);
+}
+
+/* =========================================
+   DC
+   ========================================= */
+
+.dc-text {
+    font-family: 'Amsterdam Four', 'Cinzel', serif;
+    font-size: 80px;
+    color: #0055ff;
+    font-weight: normal;
+
+    /* Inclinación hacia el centro */
+    transform: rotate(10deg);
+
+    letter-spacing: 2px;
+
+    text-shadow:
+        3px 3px 0 #000000,
+        5px 5px 0 #000000,
+        0 0 12px rgba(0, 85, 255, 0.5);
+}
+
+
+/* =========================================
+   MARCO RECTANGULAR BLANCO CENTRAL
+   ========================================= */
+
+.caja-encabezado-blanca {
+    border: 3px solid #ffffff;
+    padding: 15px 40px;
+    background-color: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(2px);
+    width: fit-content;
+    margin-top: 30px;
+    position: relative;
+    z-index: 1;
+}
+
+
+/* =========================================
+   PREGUNTA / SUBTÍTULO
+   ========================================= */
+
+.pregunta-subtitulo {
+    font-family: 'Anton', sans-serif;
+    color: #ffffff;
+    font-size: 18px;
+    letter-spacing: 2px;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+}
+
+
+/* =========================================
+   TÍTULO PRINCIPAL
+   ========================================= */
+
+.titulo-principal {
+    font-family: 'Anton', 'Impact', sans-serif;
+    color: #ffffff;
+    font-size: 70px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    line-height: 1;
+}
+
+
+/* =========================================
+   RECUADRO MORADO / PÚRPURA
+   ========================================= */
+
+.caja-subtitulo-purgura {
+    border: 2px solid #8a2be2;
+    padding: 8px 25px;
+    margin-top: 15px;
+    width: fit-content;
+    box-shadow: 0 0 10px rgba(138, 43, 226, 0.5);
+}
+
+.caja-subtitulo-purgura h2 {
+    font-family: 'Cinzel', serif;
+    font-size: 26px;
+    color: #ffffff;
+    letter-spacing: 4px;
+    font-weight: 500;
+}
+
+
+/* =========================================
+   DISTRIBUCIÓN DEL CONTENIDO INFERIOR
+   ========================================= */
+
+.contenido-inferior {
+    display: grid;
+    grid-template-columns: 1fr 200px 1fr;
+    gap: 30px;
+    align-items: start;
+    margin-top: 40px;
+}
+
+.columna {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #d1d1d1;
+    text-align: justify;
+}
+
+
+/* =========================================
+   COLUMNA CENTRAL
+   ========================================= */
+
+.columna.centro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+/* =========================================
+   BOTÓN ENTRAR
+   ========================================= */
+
+.btn-entrar {
+    background-color: #ff0000;
+    color: #000000;
+    font-family: 'Anton', sans-serif;
+    font-size: 32px;
+    padding: 10px 30px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+
+    box-shadow:
+        0 4px 15px rgba(255, 0, 0, 0.4);
+
+    transition:
+        transform 0.2s,
+        background-color 0.2s;
+}
+
+.btn-entrar:hover {
+    background-color: #cc0000;
+    transform: scale(1.05);
+}
+
+
+/* =========================================
+   IMAGEN SPIDERMAN
+   ========================================= */
+
+.imagen-spiderman {
+    width: 130px;
+    height: auto;
+    margin-top: -5px;
+
+    filter:
+        drop-shadow(0px 5px 8px rgba(0, 0, 0, 0.8));
+}
+
+
+/* =========================================
+   RESPONSIVIDAD
+   ========================================= */
+
+@media (max-width: 768px) {
+
+    .contenido-inferior {
+        grid-template-columns: 1fr;
+    }
+    
+    .columna.centro {
+        order: -1;
+        margin-bottom: 20px;
+    }
+    
+    .titulo-principal {
+        font-size: 40px;
+    }
+
+    .caja-subtitulo-purgura h2 {
+        font-size: 18px;
+    }
+
+
+    }
+
+    /* =========================================
+   RESET
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* =========================================
+   CUERPO
+========================================= */
+
+body {
+    background-color: #000000;
+
+    color: #ffffff;
+
+    font-family: 'Anton', sans-serif;
+
+    min-height: 100vh;
+}
+
+
+/* =========================================
+   PÁGINA
+========================================= */
+
+.pagina {
+
+    width: 100%;
+
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    padding: 55px 55px 40px;
+}
+
+
+/* =========================================
+   BANNER
+========================================= */
+
+.banner {
+
+    width: 100%;
+
+    height: 150px;
+
+    background-image: url('img/banner.jpg');
+
+    background-size: cover;
+
+    background-position: center;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    overflow: hidden;
+
+    position: relative;
+}
+
+
+/* Capa oscura sobre la imagen */
+
+.banner::after {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    background: rgba(0, 0, 0, 0.20);
+
+    pointer-events: none;
+}
+
+
+/* =========================================
+   DC
+========================================= */
+
+.texto-dc {
+
+    position: relative;
+
+    z-index: 2;
+
+    font-size: 105px;
+
+    line-height: 1;
+
+    font-weight: 900;
+
+    color: #fffbea;
+
+    margin-left: 35px;
+
+    letter-spacing: -5px;
+
+    text-shadow:
+        4px 4px 0 rgba(0, 0, 0, 0.4);
+}
+
+
+/* =========================================
+   MARVEL
+========================================= */
+
+.texto-marvel {
+
+    position: relative;
+
+    z-index: 2;
+
+    font-size: 105px;
+
+    line-height: 1;
+
+    font-weight: 900;
+
+    color: #fffbea;
+
+    margin-right: 30px;
+
+    letter-spacing: -5px;
+
+    text-shadow:
+        4px 4px 0 rgba(0, 0, 0, 0.4);
+}
+
+
+/* =========================================
+   MENÚ
+========================================= */
+
+.menu {
+
+    width: 100%;
+
+    margin-top: 48px;
+
+    border-top: 3px solid #ffffff;
+
+    border-bottom: 3px solid #ffffff;
+
+    min-height: 48px;
+
+    display: grid;
+
+    grid-template-columns:
+        1fr
+        1fr
+        1fr
+        1fr;
+
+    align-items: center;
+}
+
+
+/* =========================================
+   OPCIONES DEL MENÚ
+========================================= */
+
+.menu-item {
+
+    text-decoration: none;
+
+    color: #ffffff;
+
+    font-size: 27px;
+
+    text-align: center;
+
+    transition: all 0.2s ease;
+}
+
+
+/* Efecto hover */
+
+.menu-item:hover {
+
+    transform: scale(1.05);
+
+    color: #dddddd;
+}
+
+
+/* HEROES */
+
+.menu-item.heroes {
+
+    color: #174cff;
+}
+
+
+/* VOTACIÓN */
+
+.menu-item.votacion {
+
+    color: #ff1515;
+}
+
+
+/* =========================================
+   CONTENIDO
+========================================= */
+
+.contenido {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 42px;
+
+    margin-top: 12px;
+
+    align-items: start;
+}
+
+
+/* =========================================
+   CATEGORÍA
+========================================= */
+
+.categoria {
+
+    width: 100%;
+
+    text-align: center;
+}
+
+
+/* =========================================
+   TÍTULO
+========================================= */
+
+.titulo-categoria {
+
+    font-size: 27px;
+
+    color: #ffffff;
+
+    margin-bottom: 8px;
+
+    text-transform: uppercase;
+
+    line-height: 1;
+}
+
+
+/* HEROES */
+
+.titulo-categoria.heroes {
+
+    color: #174cff;
+}
+
+
+/* VOTACIÓN */
+
+.titulo-categoria.votacion {
+
+    color: #ff1515;
+
+    text-transform: lowercase;
+}
+
+
+/* =========================================
+   CONTENEDOR DE IMAGEN
+========================================= */
+
+.imagen-contenedor {
+
+    width: 100%;
+
+    height: 320px;
+
+    overflow: hidden;
+
+    background-color: #111111;
+}
+
+
+/* =========================================
+   IMAGEN
+========================================= */
+
+.imagen-contenedor img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+    transition: transform 0.3s ease;
+}
+
+
+/* Zoom al pasar el mouse */
+
+.imagen-contenedor:hover img {
+
+    transform: scale(1.03);
+}
+
+
+/* =========================================
+   RESPONSIVE - TABLET
+========================================= */
+
+@media (max-width: 900px) {
+
+    .pagina {
+
+        padding: 30px;
+    }
+
+
+    .banner {
+
+        height: 120px;
+    }
+
+
+    .texto-dc,
+    .texto-marvel {
+
+        font-size: 75px;
+    }
+
+
+    .contenido {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        gap: 30px;
+    }
+
+}
+
+
+/* =========================================
+   RESPONSIVE - CELULAR
+========================================= */
+
+@media (max-width: 600px) {
+
+    .pagina {
+
+        padding: 20px;
+    }
+
+
+    .banner {
+
+        height: 90px;
+    }
+
+
+    .texto-dc,
+    .texto-marvel {
+
+        font-size: 48px;
+    }
+
+
+    .texto-dc {
+
+        margin-left: 15px;
+    }
+
+
+    .texto-marvel {
+
+        margin-right: 15px;
+    }
+
+
+    .menu {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        gap: 10px;
+
+        padding: 10px 0;
+    }
+
+
+    .menu-item {
+
+        font-size: 20px;
+    }
+
+
+    .contenido {
+
+        grid-template-columns: 1fr;
+
+        gap: 30px;
+    }
+
+
+    .imagen-contenedor {
+
+        height: auto;
+    }
+
+
+    .imagen-contenedor img {
+
+        height: auto;
+    }
+
+}
+
+    
